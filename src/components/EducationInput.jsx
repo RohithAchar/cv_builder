@@ -1,26 +1,35 @@
 import { useState } from "react";
+import crossIcon from "../assets/x-solid.svg";
+import arrowDownIcon from "../assets/arrow-down-solid.svg";
 
 const CollectedData = ({ info, deleteHandler }) => {
   return (
-    <div>
-      <p>{info.institution}</p>
-      <p>{info.degree}</p>
-      <p>{info.fieldOfStudy}</p>
-      <p>{info.graduationYear}</p>
+    <div className="collection">
+      <p>
+        Institution: <strong>{info.institution}</strong>
+      </p>
+      <p>
+        Degree: <strong>{info.degree}</strong>
+      </p>
+      <p>
+        FOS: <strong>{info.fieldOfStudy}</strong>
+      </p>
+      <p>
+        Year: <strong>{info.graduationYear}</strong>
+      </p>
       <button
+        className="delete-btn"
         onClick={() => {
           deleteHandler(info.id);
         }}
-      >
-        D
-      </button>
+      ></button>
     </div>
   );
 };
 
 const EducationInput = ({ submitHandler, data, deleteHandler }) => {
   const [showInput, setShowInput] = useState(false);
-  const [showEdit, setShowEdit] = useState(false);
+  const [showEdit, setShowEdit] = useState(true);
   const [educationData, setEducationData] = useState({
     institution: "",
     degree: "",
@@ -29,16 +38,22 @@ const EducationInput = ({ submitHandler, data, deleteHandler }) => {
   });
   return (
     <div className="education-div">
-      <h3>Education</h3>
-      <button
-        onClick={() => {
-          setShowInput(!showInput);
-          if (showInput === true) setShowEdit(false);
-          else setShowEdit(true);
-        }}
-      >
-        Add
-      </button>
+      <div className="heading-wrapper">
+        <h3>Education</h3>
+        <button
+          onClick={() => {
+            setShowInput(!showInput);
+            if (showInput === false) setShowEdit(false);
+            else setShowEdit(true);
+          }}
+        >
+          <img
+            src={showInput ? crossIcon : arrowDownIcon}
+            alt="arrow icon"
+            width={12}
+          />
+        </button>
+      </div>
       {showInput && (
         <form
           onSubmit={(e) => {
@@ -121,7 +136,7 @@ const EducationInput = ({ submitHandler, data, deleteHandler }) => {
               required
             />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit"></button>
         </form>
       )}
       {showEdit && (

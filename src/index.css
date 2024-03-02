@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#root {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-family: Poppins, sans-serif;
+  background-color: #272727;
+}
+body {
+  margin: 0;
+}
+form {
+  padding: 10px 50px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+form label {
+  display: block;
+  margin-bottom: -5px;
+  font-weight: 400;
+}
+form input {
+  margin-bottom: 10px;
+  height: 20px;
+  padding-left: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+button[type="submit"] {
+  height: 30px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  cursor: pointer;
+}
+button[type="submit"]::after {
+  content: "Save";
+  background-image: url("./assets/check-solid.svg");
+  background-repeat: no-repeat;
+  background-size: 20px; /* Adjust size as needed */
+  background-position: left center; /* Adjust position as needed */
+  padding-left: 30px;
+}
+.inputs-wrapper {
+  min-width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.heading-wrapper {
+  background-color: #161616;
+  color: #dddddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.heading-wrapper button {
+  padding-top: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.collection {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.collection p {
+  opacity: 0.8;
+}
+.edit-btn {
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.delete-btn {
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.delete-btn::after {
+  content: "Delete";
+  background-image: url("./assets/trash-solid.svg");
+  background-repeat: no-repeat;
+  background-size: 16px; /* Adjust size as needed */
+  background-position: left center; /* Adjust position as needed */
+  padding-left: 30px;
+}
+.edit-btn::after {
+  content: "Edit";
+  background-image: url("./assets/pen-to-square-solid.svg");
+  background-repeat: no-repeat;
+  background-size: 16px; /* Adjust size as needed */
+  background-position: left center; /* Adjust position as needed */
+  padding-left: 30px;
+}
+
+.personal-div,
+.education-div,
+.practical-div {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.display-wrapper {
+  background-color: #ffffff;
+  min-width: 720px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  height: 1080px;
+}
+.display-wrapper h2 {
+  font-size: 24px;
+}
+.personal-info {
+  padding: 50px;
+  background-color: #d3d3d3;
+  margin-bottom: 10px;
+}
+.personal-info h1 {
+  font-size: 48px;
+  letter-spacing: 5px;
+  word-spacing: 20px;
+}
+.personal-info div {
+  opacity: 0.8;
+  margin-top: -60px;
+  display: flex;
+  justify-content: center;
+}
+.personal-info div > p {
+  display: flex;
+  padding: 10px;
+  padding-right: 30px;
+}
+.personal-info div > p > img {
+  padding-right: 10px;
+}
+.education-info-container {
+  position: relative;
+  padding-bottom: 20px;
+}
+.education-info-container ::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+  width: 30%;
+  height: 1px; /* Adjust thickness of the line */
+  /* background-color: black; Adjust color of the line */
+  border-bottom: 5px dotted rgb(173, 173, 173);
+}
+/* .education-info-container {
+} */
+.education-info-container > h2 {
+  margin-top: 20px;
+}
+.education-flex,
+.practical-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+}
+.education-flex p,
+.practical-flex p {
+  margin: 0;
+}

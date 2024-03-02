@@ -1,4 +1,6 @@
 import { useState } from "react";
+import crossIcon from "../assets/x-solid.svg";
+import arrowDownIcon from "../assets/arrow-down-solid.svg";
 
 const PersonalInfoInput = ({ submitHandler }) => {
   const [showInput, setShowInput] = useState(true);
@@ -11,16 +13,24 @@ const PersonalInfoInput = ({ submitHandler }) => {
   });
   return (
     <div className="personal-div">
-      <h3>Personal Info</h3>
-      <button
-        onClick={() => {
-          setShowInput(!showInput);
-          if (showInput === false) setShowEdit(false);
-          else setShowEdit(true);
-        }}
-      >
-        V
-      </button>
+      <div className="heading-wrapper">
+        <h3>Personal Info</h3>
+        <button
+          onClick={() => {
+            setShowInput(!showInput);
+            setShowEdit(!showEdit);
+            // if (showInput === false) setShowEdit(false);
+            // else setShowEdit(true);
+          }}
+        >
+          <img
+            src={showInput ? crossIcon : arrowDownIcon}
+            alt="arrow icon"
+            width={12}
+          />
+        </button>
+      </div>
+
       {showInput && (
         <form
           onSubmit={(e) => {
@@ -85,23 +95,30 @@ const PersonalInfoInput = ({ submitHandler }) => {
               required
             />
           </div>
-          <button type="submit">Save</button>
+          <button type="submit"></button>
         </form>
       )}
       {showEdit && (
-        <div>
-          <p>{formData.name}</p>
-          <p>{formData.email}</p>
-          <p>{formData.phoneNumber}</p>
-          <p>{formData.address}</p>
+        <div className="collection">
+          <p>
+            Name: <strong>{formData.name}</strong>
+          </p>
+          <p>
+            Email: <strong>{formData.email}</strong>
+          </p>
+          <p>
+            Number: <strong>{formData.phoneNumber}</strong>
+          </p>
+          <p>
+            Address: <strong>{formData.address}</strong>
+          </p>
           <button
+            className="edit-btn"
             onClick={() => {
               setShowInput(!showInput);
               setShowEdit(!showEdit);
             }}
-          >
-            E
-          </button>
+          ></button>
         </div>
       )}
     </div>

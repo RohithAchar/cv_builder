@@ -3,6 +3,8 @@ import PersonalInfoInput from "./PersonalInfoInput";
 import DisplayPersonalInfo from "./DisplayPersonalInfo";
 import EducationInput from "./EducationInput";
 import EducationDisplay from "./EducationDisplay";
+import PracticalInput from "./PracticalInput";
+import PracticalDisplay from "./PracticalDisplay";
 
 const Parent = () => {
   const [personalData, setPersonalData] = useState({
@@ -35,6 +37,26 @@ const Parent = () => {
     );
   };
 
+  const [practicalExperience, setPracticalExperience] = useState([]);
+  const pracicalSubmitHandler = (newData) => {
+    let id;
+    if (practicalExperience.length === 0) {
+      let id = 0;
+      setPracticalExperience([{ ...newData, id: id }]);
+      return;
+    } else {
+      id = practicalExperience[practicalExperience.length - 1].id + 1;
+      setPracticalExperience([...practicalExperience, { ...newData, id: id }]);
+    }
+  };
+  const deletePracticalExperience = (id) => {
+    setPracticalExperience(
+      practicalExperience.filter((info) => {
+        if (info.id !== id) return info;
+      })
+    );
+  };
+  console.log(practicalExperience);
   return (
     <>
       <section className="inputs-wrapper">
@@ -44,10 +66,16 @@ const Parent = () => {
           data={educationData}
           deleteHandler={deleteEducationData}
         />
+        <PracticalInput
+          submitHandler={pracicalSubmitHandler}
+          data={practicalExperience}
+          deleteHandler={deletePracticalExperience}
+        />
       </section>
       <section className="display-wrapper">
         <DisplayPersonalInfo data={personalData} />
         <EducationDisplay data={educationData} />
+        <PracticalDisplay data={practicalExperience} />
       </section>
     </>
   );
