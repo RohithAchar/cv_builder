@@ -157,14 +157,17 @@ button[type="submit"]::after {
 .education-info-container > h2 {
   margin-top: 20px;
 }
-.education-flex,
 .practical-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 200px;
 }
-.education-flex p,
 .practical-flex p {
   margin: 0;
+}
+
+/* Education */
+.education > p:nth-child(n + 2):nth-child(-n + 4) {
+  margin-top: -10px;
 }

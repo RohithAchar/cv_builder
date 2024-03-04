@@ -60,6 +60,7 @@ const EducationInput = ({ submitHandler, data, deleteHandler }) => {
             e.preventDefault();
             submitHandler(educationData);
             setShowInput(!showInput);
+            setShowEdit(true);
             setEducationData({
               institution: "",
               degree: "",

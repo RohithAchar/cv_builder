@@ -1,15 +1,12 @@
 const Information = ({ data }) => {
   return (
-    <div className="education-flex">
-      <div className="year">
-        <p>{data.graduationYear}</p>
-        <p>{data.fieldOfStudy}</p>
-      </div>
-      <p>-</p>
-      <div className="degree">
-        <p>{data.institution}</p>
-        <p>{data.degree}</p>
-      </div>
+    <div className="education">
+      <p>
+        <strong>{data.institution}</strong>
+      </p>
+      <p>{data.degree}</p>
+      <p>{data.fieldOfStudy}</p>
+      <p>{data.graduationYear}</p>
     </div>
   );
 };
