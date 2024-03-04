@@ -1,16 +1,15 @@
 const Data = ({ data }) => {
   return (
-    <div className="practical-flex">
-      <div>
+    <div className="practical">
+      <p>
+        <strong>{data.companyName}</strong>
+      </p>
+      <p>{data.positionTitle}</p>
+      <p>{data.jobResponsibility}</p>
+      <div className="practical-flex">
         <p>{data.startDate}</p>
-        <p>to</p>
+        <p>-</p>
         <p>{data.endDate}</p>
-      </div>
-      <p>-</p>
-      <div>
-        <p>{data.companyName}</p>
-        <p>{data.positionTitle}</p>
-        <p>{data.jobResponsibility}</p>
       </div>
     </div>
   );
