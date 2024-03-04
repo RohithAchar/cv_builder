@@ -162,16 +162,18 @@ button[type="submit"]::after {
 
 /* Education */
 .education > p:nth-child(n + 2):nth-child(-n + 4) {
+  color: #303030;
   margin-top: -20px;
 }
 /* practical */
 .practical > p:nth-child(n + 2):nth-child(-n + 3) {
+  color: #303030;
   margin-top: -10px;
 }
 .practical-flex {
+  color: #303030;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 200px;
-  margin-top: -30px;
+  justify-content: center;
+  gap: 20px;
+  margin-top: -20px;
 }
